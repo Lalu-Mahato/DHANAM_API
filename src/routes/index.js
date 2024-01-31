@@ -2,9 +2,9 @@ const httpStatus = require('http-status');
 const logger = require('@logger');
 const CommonMethods = require('@common-methods');
 const router = require('express').Router();
-const bankbanchRoutes = require('./bankbanch');
+const demanddataRoutes = require('./demanddata');
 
-router.use('/bankbranch', bankbanchRoutes);
+router.use('/demand', demanddataRoutes);
 router.get('/health-check', (req, res) => res.send({ message: 'App running...' }));
 
 // Validating unknown routes

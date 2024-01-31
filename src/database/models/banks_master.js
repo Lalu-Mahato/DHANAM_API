@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-    const bankBranch = sequelize.define(
-        'bankBranch',
+    const banks_master = sequelize.define(
+        'banks_master',
         {
             code: DataTypes.INTEGER,
             name: DataTypes.STRING,
@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: true,
         },
     );
-    bankBranch.associate = () => {
-        // associations can be defined here
+    banks_master.associate = () => {
+    // associations can be defined here
     };
-    return bankBranch;
+    return banks_master;
 };

@@ -1,12 +1,11 @@
-const bankbanchService = require('@services/bankbranch/bankbranch-service');
-
+const demanddataService = require('@services/demanddata/demanddata-Service');
 const ErrorHelper = require('@helpers/error.helper');
 
-class BankBanchController {
-    static async create(req, res) {
+class DemandDataController {
+    static async upload(req, res) {
         try {
             const { body } = req;
-            const result = await bankbanchService.create(body);
+            const result = await demanddataService.uplaod(body);
             return res.status(result.code).send(result);
         } catch (err) {
             const appError = ErrorHelper.error(err);
@@ -15,4 +14,4 @@ class BankBanchController {
     }
 }
 
-module.exports = BankBanchController;
+module.exports = DemandDataController;

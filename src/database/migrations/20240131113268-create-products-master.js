@@ -1,5 +1,5 @@
 module.exports = {
-    up: (queryInterface, Sequelize) => queryInterface.createTable('bank_branches', {
+    up: (queryInterface, Sequelize) => queryInterface.createTable('products_masters', {
         id: {
             allowNull: false,
             autoIncrement: true,
@@ -15,22 +15,6 @@ module.exports = {
             type: Sequelize.STRING,
             allowNull: false,
         },
-        address: {
-            type: Sequelize.STRING,
-            allowNull: true,
-        },
-        city: {
-            type: Sequelize.STRING,
-            allowNull: true,
-        },
-        state: {
-            type: Sequelize.STRING,
-            allowNull: true,
-        },
-        country: {
-            type: Sequelize.STRING,
-            allowNull: true,
-        },
         created_at: {
             allowNull: false,
             type: Sequelize.DATE,
@@ -40,5 +24,5 @@ module.exports = {
             type: Sequelize.DATE,
         },
     }),
-    down: (queryInterface) => queryInterface.dropTable('bank_branches'),
+    down: (queryInterface) => queryInterface.dropTable('products_masters'),
 };
