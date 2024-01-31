@@ -1,0 +1,44 @@
+module.exports = {
+    up: (queryInterface, Sequelize) => queryInterface.createTable('bank_branches', {
+        id: {
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true,
+            type: Sequelize.INTEGER,
+        },
+        code: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+            unique: true,
+        },
+        name: {
+            type: Sequelize.STRING,
+            allowNull: false,
+        },
+        address: {
+            type: Sequelize.STRING,
+            allowNull: true,
+        },
+        city: {
+            type: Sequelize.STRING,
+            allowNull: true,
+        },
+        state: {
+            type: Sequelize.STRING,
+            allowNull: true,
+        },
+        country: {
+            type: Sequelize.STRING,
+            allowNull: true,
+        },
+        createdAt: {
+            allowNull: false,
+            type: Sequelize.DATE,
+        },
+        updatedAt: {
+            allowNull: false,
+            type: Sequelize.DATE,
+        },
+    }),
+    down: (queryInterface) => queryInterface.dropTable('bank_branches'),
+};
