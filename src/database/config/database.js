@@ -1,5 +1,12 @@
 require('dotenv').config();
 
+const poolConfig = {
+    max: 50,
+    min: 0,
+    acquire: 1200000, // 20 mins
+    idle: 1000000, // 16 min 40 sec
+};
+
 module.exports = {
     development: {
         username: process.env.DB_USER,
@@ -9,6 +16,7 @@ module.exports = {
         port: process.env.DB_PORT,
         dialect: 'postgres',
         logging: false,
+        pool: poolConfig,
     },
     test: {
         username: process.env.DB_USER,
@@ -18,6 +26,7 @@ module.exports = {
         port: process.env.DB_PORT,
         dialect: 'postgres',
         logging: false,
+        pool: poolConfig,
     },
     production: {
         username: process.env.DB_USER,
@@ -27,5 +36,6 @@ module.exports = {
         port: process.env.DB_PORT,
         dialect: 'postgres',
         logging: false,
+        pool: poolConfig,
     },
 };
