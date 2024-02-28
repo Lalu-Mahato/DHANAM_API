@@ -1,4 +1,5 @@
 const XLSX = require('xlsx');
+const CommonMethod = require('@common-methods');
 const emiAction = require('@services/emi/action/emi');
 const prospectAction = require('@services/prospect/action/prospect');
 const loanAction = require('@services/loan/action/loan');
@@ -29,6 +30,7 @@ const filterUniqueBranches = (data) => {
         return false;
     });
     return uniqueData.map((branch) => ({
+        ID: CommonMethod.generateId(),
         Branch_Name: branch.Branch_Name,
         Branch_Code: branch.Branch_Code,
     }));

@@ -2,6 +2,7 @@
 const httpStatus = require('http-status');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const moment = require('moment');
 
 class CommonMethods {
     static successResponse(data, pagination) {
@@ -99,6 +100,14 @@ class CommonMethods {
         secretRefreshKey = process.env.JWT_REFRESH_SECRET,
     ) {
         return jwt.sign(payload, secretRefreshKey);
+    }
+
+    static generateId() {
+        const random = Math.floor(Math.random() * 1000);
+        const milliseconds = random.toString().padStart(3, '0');
+
+        const stringId = moment().format('YYYYMMDDhmmSSS') + milliseconds;
+        return parseInt(stringId, 10);
     }
 }
 
